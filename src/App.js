@@ -13,9 +13,8 @@ class App extends Component{
     }
 
     componentDidMount() {
-        const uriBase = process.env.NODE_ENV === 'development'
-            ? 'https://localhost:44382/api/user'
-            : 'prodUri';
+        const uriBase = '/api/user';
+
         fetch(uriBase)
             .then(response => response.json())
             .then(users => this.setState({users: users}));
